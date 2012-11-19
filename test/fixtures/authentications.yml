@@ -1,0 +1,13 @@
+one:
+  user_id: MyString
+  provider: MyString
+  uid: MyString
+  token: MyString
+  token_secret: MyString
+
+two:
+  user_id: MyString
+  provider: MyString
+  uid: MyString
+  token: MyString
+  token_secret: MyString
