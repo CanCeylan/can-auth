@@ -8,9 +8,8 @@ class AuthenticationsController < ApplicationController
   end
   
   def twitter
-    raise omni = request.env["omniauth.auth"].to_yaml
+     omni = request.env["omniauth.auth"]
      authentication = Authentication.find_by_provider_and_uid(omni['provider'], omni['uid'])
-     #raise omni.to_yaml
 
      if authentication
        flash[:notice] = "Logged in Successfully"
@@ -24,9 +23,7 @@ class AuthenticationsController < ApplicationController
        sign_in_and_redirect current_user
      else
        user = User.new
-       user.provider = omni.provider
-       user.uid = omni.uid
-
+  
        user.apply_omniauth(omni)
 
        if user.save
