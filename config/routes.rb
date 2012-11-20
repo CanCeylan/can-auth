@@ -1,6 +1,6 @@
 CanAuth::Application.routes.draw do
 
-  match '/auth/:provider/callback' => 'authentications#create'
+  #match '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
   
   devise_for :users, path_names: {sign_in: "login"},
